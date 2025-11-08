@@ -9,7 +9,7 @@ export async function handlerRegister(cmdName: string, ...args: string[]) {
     const userName = args[0];
     const dbUser = await getUserByName(userName);
     
-    if (dbUser.length !== 0) {
+    if (dbUser) {
         throw new Error("user already exists")
     }
 
